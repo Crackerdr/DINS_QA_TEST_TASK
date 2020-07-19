@@ -2,6 +2,7 @@ import models.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -45,6 +46,11 @@ public class UserTest {
         JSONArray usersList = Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE, "users/search?name=" + firstName);
         UserMethods.findUserAndCheckTrue(firstName,lastName,id,usersList);
         LOGGER.info("createUserAndCheck: Finnish");
+    }
+
+    @DataProvider(name = "old_new_date")
+    public Object[][] dataProviderMethod() {
+        return new Object[][] { { "TestFirstName", "TestLastName"}, { "NewFirstName", "NewLastName"} };
     }
 
     @Test(description = "Проверка на поиск пользователя с помощью старого имени")
