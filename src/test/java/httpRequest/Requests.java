@@ -1,3 +1,5 @@
+package httpRequest;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -14,58 +16,28 @@ public class Requests {
     public final static String PHONE_BOOK_BASE = "http://localhost:8080/";
 
 
-    public static JSONObject sendGetRequestObject(String query) throws IOException {
-        HttpURLConnection conn = connectHttp(query,"GET");
-        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        StringBuilder response = new StringBuilder();
-        JSONObject myResponse = new JSONObject(successResponse(in,response));
-        return myResponse;
-    }
-
     public static JSONArray sendGetRequestArray(String query) throws IOException {
-        HttpURLConnection conn = connectHttp(query,"GET");
-        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        StringBuilder response = new StringBuilder();
-        JSONArray myResponse = new JSONArray(successResponse(in,response));
-        finnishAndCloseConnect(conn,response);
-        return myResponse;
+        String result = sendRequestWithoutBody(query,"GET");
+        return new JSONArray(result);
     }
 
-
-    static String sendPostRequest(String query, String inputString) throws IOException {
-        HttpURLConnection conn = connectHttp(query,"POST");
-      sendMessageBody(conn,inputString);
-        StringBuilder response = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-            return successResponse(br,response);
-        } catch (IOException e){
-            failResponse(conn,response);
-            throw new IOException("Ошибка отправки запроса: сервис вернул ошибку");
-        } finally {
-            finnishAndCloseConnect(conn,response);
-        }
-    }
-
-    static int sendPostRequestAndGetId(String query, String inputString) throws IOException {
-        HttpURLConnection conn = connectHttp(query,"POST");
-     sendMessageBody(conn,inputString);
-        StringBuilder response = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-            JSONObject myResponse = new JSONObject(successResponse(br,response));
-            int id = Integer.parseInt(myResponse.get("id").toString());
-            return id;
-        } catch (IOException e){
-            failResponse(conn,response);
-            throw new IOException("Ошибка отправки запроса: сервис вернул ошибку");
-        } finally {
-            finnishAndCloseConnect(conn,response);
-
-        }
+   public static int sendPostRequestAndGetId(String query, String inputString) throws IOException {
+        String result = sendRequestWithBody(query,inputString,"POST");
+        JSONObject myResponse = new JSONObject(result);
+        return Integer.parseInt(myResponse.get("id").toString());
     }
 
     public static String sendPutRequest(String query, String inputString) throws IOException {
-        HttpURLConnection conn = connectHttp(query,"PUT");
-      sendMessageBody(conn,inputString);
+        return sendRequestWithBody(query,inputString,"PUT");
+    }
+
+    public static String sendDeleteRequest(String query) throws IOException {
+        return sendRequestWithoutBody(query,"DELETE");
+    }
+
+    private static String sendRequestWithBody(String query,String inputString, String typeRequest) throws IOException {
+        HttpURLConnection conn = connectHttp(query,typeRequest);
+            sendMessageBody(conn, inputString);
         StringBuilder response = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
             return successResponse(br,response);
@@ -76,17 +48,16 @@ public class Requests {
             finnishAndCloseConnect(conn,response);
         }
     }
-
-    public static String sendDeleteRequest(String query) throws IOException {
-        HttpURLConnection conn = connectHttp(query,"DELETE");
+    private static String sendRequestWithoutBody(String query,String typeRequest) throws IOException {
+        HttpURLConnection conn = connectHttp(query,typeRequest);
         StringBuilder response = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8))) {
-         return  successResponse(br,response);
+            return successResponse(br,response);
         } catch (IOException e){
            failResponse(conn,response);
             throw new IOException("Ошибка отправки запроса: сервис вернул ошибку");
         } finally {
-          finnishAndCloseConnect(conn,response);
+            finnishAndCloseConnect(conn,response);
         }
     }
 
@@ -99,7 +70,7 @@ public class Requests {
         conn.setRequestMethod(method);
         conn.setDoOutput(true);
         conn.connect();
-        System.out.println("\nSending"+method+ "request to URL : " + conn.getURL());
+        System.out.println("\nSending "+method+ " request to URL : " + conn.getURL());
         return conn;
     }
 
