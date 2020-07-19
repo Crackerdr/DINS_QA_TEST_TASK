@@ -5,6 +5,8 @@ import converter.Converter;
 import data.DataProviderClass;
 import httpRequest.RequestMethods;
 import httpRequest.Requests;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import models.User;
 import org.json.JSONArray;
 import org.testng.annotations.Test;
@@ -12,6 +14,8 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.logging.Logger;
 
+@Feature("Функциональные тесты")
+@Story("Пользователи")
 public class UserTest {
     final static Logger LOGGER = Logger.getLogger(UserTest.class.getName());
 

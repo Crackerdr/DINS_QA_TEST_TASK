@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-07-19T17:05:23Z" name="Surefire suite" finished-at="2020-07-19T17:05:25Z" duration-ms="2430">
+    <groups>
+    </groups>
+    <test started-at="2020-07-19T17:05:23Z" name="Surefire test" finished-at="2020-07-19T17:05:25Z" duration-ms="2430">
+      <class name="test.UserTest">
+        <test-method signature="createUserAndCheck(java.lang.String, java.lang.String)[pri:0, instance:test.UserTest@6ebd78d1]" started-at="2020-07-19T17:05:25Z" name="createUserAndCheck" description="Проверка создания пользователя" data-provider="create_check" finished-at="2020-07-19T17:05:25Z" duration-ms="34" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TestCFirstName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestCLastName]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createUserAndCheck -->
+        <test-method signature="updateUserAndCheck(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.UserTest@6ebd78d1]" started-at="2020-07-19T17:05:25Z" name="updateUserAndCheck" description="Проверка на поиск пользователя с помощью старого имени" data-provider="update_check" finished-at="2020-07-19T17:05:25Z" duration-ms="759" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TestUFirstName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestULastName]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NewUFirstName]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[NewULastName]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUserAndCheck -->
+      </class> <!-- test.UserTest -->
+      <class name="test.ContactTest">
+        <test-method signature="changeToBlankAndCheck(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:test.ContactTest@1af7f54a]" started-at="2020-07-19T17:05:23Z" name="changeToBlankAndCheck" description="Проверка изменения номера на пустое значение" data-provider="change_blank_check" finished-at="2020-07-19T17:05:24Z" duration-ms="1249" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[TestFirstName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestLastName]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[3434343434]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Dora@explora.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Vana]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[gala@gmail.com]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changeToBlankAndCheck -->
+        <test-method signature="deleteContactAndCheck(java.lang.String, java.lang.String, java.lang.String, java.lang.String, int)[pri:0, instance:test.ContactTest@1af7f54a]" started-at="2020-07-19T17:05:24Z" name="deleteContactAndCheck" description="Проверка удаления контакта" data-provider="delete_check" finished-at="2020-07-19T17:05:25Z" duration-ms="87" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ContFirstName]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ContLastName]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1232399734]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[bo@bo.com]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.io.IOException">
+            <message>
+              <![CDATA[Ошибка отправки запроса: сервис вернул ошибку]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.io.IOException: Ошибка отправки запроса: сервис вернул ошибку
+at httpRequest.Requests.sendRequestWithoutBody(Requests.java:61)
+at httpRequest.Requests.sendDeleteRequest(Requests.java:38)
+at test.ContactTest.deleteContactAndCheck(ContactTest.java:29)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:193)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:94)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
+at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.io.IOException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteContactAndCheck -->
+      </class> <!-- test.ContactTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

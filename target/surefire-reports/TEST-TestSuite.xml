@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4.44" tests="4" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="14"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK\target\test-classes;C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK\target\classes;C:\Users\user\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\user\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\user\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\user\.m2\repository\org\json\json\20180813\json-20180813.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-testng\2.13.5\allure-testng-2.13.5.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-java-commons\2.13.5\allure-java-commons-2.13.5.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-model\2.13.5\allure-model-2.13.5.jar;C:\Users\user\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\user\.m2\repository\org\apache\tika\tika-core\1.20\tika-core-1.20.jar;C:\Users\user\.m2\repository\org\jooq\joor-java-8\0.9.10\joor-java-8-0.9.10.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.9.3\jackson-databind-2.9.9.3.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Yekaterinburg"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="14"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Users\user\.jdks\openjdk-14.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\user\AppData\Local\Temp\surefire6927515793973194458\surefirebooter13875686553001415949.jar C:\Users\user\AppData\Local\Temp\surefire6927515793973194458 2020-07-19T22-05-18_830-jvmRun1 surefire99792382286494221tmp surefire_03631281015279772236tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK\target\test-classes;C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK\target\classes;C:\Users\user\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\user\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\user\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\user\.m2\repository\org\json\json\20180813\json-20180813.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-testng\2.13.5\allure-testng-2.13.5.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-java-commons\2.13.5\allure-java-commons-2.13.5.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-model\2.13.5\allure-model-2.13.5.jar;C:\Users\user\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\user\.m2\repository\org\apache\tika\tika-core\1.20\tika-core-1.20.jar;C:\Users\user\.m2\repository\org\jooq\joor-java-8\0.9.10\joor-java-8-0.9.10.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.9.3\jackson-databind-2.9.9.3.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;"/>
+    <property name="allure.results.directory" value="target/allure-results"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\user"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-07-14"/>
+    <property name="java.home" value="C:\Users\user\.jdks\openjdk-14.0.2"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="idea.version2020.1.2" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\user\AppData\Local\Temp\surefire6927515793973194458\surefirebooter13875686553001415949.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="14.0.2+12-46"/>
+    <property name="user.name" value="user"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\user\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\user\AppData\Local\Temp\"/>
+    <property name="java.version" value="14.0.2"/>
+    <property name="user.dir" value="C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\user\.jdks\openjdk-14.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\AdoptOpenJDK\jdk-11.0.8.10-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_191\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\sqlite;C:\Program Files\Calibre2\;C:\Program Files\nodejs\;C:\Program Files (x86)\GitExtensions\;C:\Users\user\scoop\shims;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_191\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.1.2\bin;;C:\Users\user\AppData\Roaming\npm;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="14.0.2+12-46"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="58.0"/>
+  </properties>
+  <testcase name="changeToBlankAndCheck" classname="test.ContactTest" time="1.266"/>
+  <testcase name="deleteContactAndCheck" classname="test.ContactTest" time="0.146">
+    <failure message="Ошибка отправки запроса: сервис вернул ошибку" type="java.io.IOException">java.io.IOException: Ошибка отправки запроса: сервис вернул ошибку
+	at test.ContactTest.deleteContactAndCheck(ContactTest.java:29)
+</failure>
+    <system-out><![CDATA[
+Sending POST request to URL : http://localhost:8080/users/1/contacts
+Response status: 201
+Результаты отправки запроса: {"id":38,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}
+
+Sending GET request to URL : http://localhost:8080/users/1/contacts/search?number=1232399734
+Response status: 200
+Результаты отправки запроса: [{"id":6,"firstName":"ContactFirstNameTest","lastName":"ContactLastNameTest","phone":"1232399734","email":"bo@bo.com"},{"id":15,"firstName":"ContactFirstNameTest","lastName":"ContactLastNameTest","phone":"1232399734","email":"bo@bo.com"},{"id":17,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":25,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":28,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":30,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":32,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":34,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":36,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":38,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}]
+
+Sending DELETE request to URL : http://localhost:8080/users/1/contacts/38/
+Response status: 404
+Результаты отправки запроса: {"timestamp":"2020-07-19 10:05:25","status":404,"error":"Contact with id:38 not found"}
+]]></system-out>
+    <system-err><![CDATA[июл. 19, 2020 10:05:24 PM test.ContactTest deleteContactAndCheck
+INFO: deleteContactAndCheck: Start
+июл. 19, 2020 10:05:24 PM converter.Converter toJSON
+INFO: json created!
+июл. 19, 2020 10:05:24 PM converter.Converter toJSON
+INFO: {"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}
+]]></system-err>
+  </testcase>
+  <testcase name="createUserAndCheck" classname="test.UserTest" time="0.035"/>
+  <testcase name="updateUserAndCheck" classname="test.UserTest" time="0.778"/>
+</testsuite>

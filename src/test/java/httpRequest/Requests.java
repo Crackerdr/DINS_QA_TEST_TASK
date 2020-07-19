@@ -1,5 +1,6 @@
 package httpRequest;
 
+import io.qameta.allure.Step;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -15,22 +16,24 @@ public class Requests {
 
     public final static String PHONE_BOOK_BASE = "http://localhost:8080/";
 
-
+    @Step("Отправка GET запроса")
     public static JSONArray sendGetRequestArray(String query) throws IOException {
         String result = sendRequestWithoutBody(query,"GET");
         return new JSONArray(result);
     }
 
+    @Step("Отправка POST запроса с получением id")
    public static int sendPostRequestAndGetId(String query, String inputString) throws IOException {
         String result = sendRequestWithBody(query,inputString,"POST");
         JSONObject myResponse = new JSONObject(result);
         return Integer.parseInt(myResponse.get("id").toString());
     }
 
+    @Step("Отправка PUT запроса")
     public static String sendPutRequest(String query, String inputString) throws IOException {
         return sendRequestWithBody(query,inputString,"PUT");
     }
-
+    @Step("Отправка DELETE запроса")
     public static String sendDeleteRequest(String query) throws IOException {
         return sendRequestWithoutBody(query,"DELETE");
     }
@@ -61,7 +64,7 @@ public class Requests {
         }
     }
 
-    public static HttpURLConnection connectHttp(String query, String method) throws IOException {
+    private static HttpURLConnection connectHttp(String query, String method) throws IOException {
         URL url = new URL(PHONE_BOOK_BASE+query);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestProperty("Content-Type", "application/json; utf-8");
@@ -75,26 +78,26 @@ public class Requests {
     }
 
 
-    public static String successResponse(BufferedReader br,StringBuilder response) throws IOException {
+    private static String successResponse(BufferedReader br,StringBuilder response) throws IOException {
         String responseLine;
         while ((responseLine = br.readLine()) != null) {
             response.append(responseLine.trim());
         }
         return response.toString();
     }
-    public static void failResponse(HttpURLConnection conn,StringBuilder response) throws IOException {
+    private static void failResponse(HttpURLConnection conn,StringBuilder response) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), StandardCharsets.UTF_8));
         String responseLine;
         while ((responseLine = br.readLine()) != null) {
             response.append(responseLine.trim());
         }
     }
-    public static void finnishAndCloseConnect(HttpURLConnection conn, StringBuilder response) throws IOException {
+    private static void finnishAndCloseConnect(HttpURLConnection conn, StringBuilder response) throws IOException {
         System.out.println("Response status: " + conn.getResponseCode());
         System.out.println("Результаты отправки запроса: "+response.toString());
         conn.disconnect();
     }
-    public static void sendMessageBody(HttpURLConnection conn,String inputString) throws IOException {
+    private static void sendMessageBody(HttpURLConnection conn,String inputString) throws IOException {
         try (OutputStream os = conn.getOutputStream()) {
             byte[] input = inputString.getBytes(StandardCharsets.UTF_8);
             os.write(input, 0, input.length);
