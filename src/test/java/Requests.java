@@ -16,17 +16,17 @@ public class Requests {
 
     public static JSONObject sendGetRequestObject(String query) throws IOException {
         HttpURLConnection conn = connectHttp(query,"GET");
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         StringBuilder response = new StringBuilder();
-        JSONObject myResponse = new JSONObject(successResponse(br,response));
+        JSONObject myResponse = new JSONObject(successResponse(in,response));
         return myResponse;
     }
 
     public static JSONArray sendGetRequestArray(String query) throws IOException {
         HttpURLConnection conn = connectHttp(query,"GET");
-        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getErrorStream(), StandardCharsets.UTF_8));
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         StringBuilder response = new StringBuilder();
-        JSONArray myResponse = new JSONArray(successResponse(br,response));
+        JSONArray myResponse = new JSONArray(successResponse(in,response));
         finnishAndCloseConnect(conn,response);
         return myResponse;
     }

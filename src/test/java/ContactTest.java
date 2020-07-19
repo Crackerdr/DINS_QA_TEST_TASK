@@ -2,6 +2,7 @@ import models.Contact;
 import models.User;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -12,9 +13,7 @@ public class ContactTest {
 
     @Test
     public void addContact() throws IOException {
-//        Contact contact = new Contact("firstNamej","lastNamek","8888887788","bo@bko.com");
-//        Requests.sendPostRequest(Requests.PHONE_BOOK_BASE,"users/4/contacts",Converter.toJSON(contact));
-        JSONArray listOfUser = Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE,"users/4/contacts");
+        JSONArray listOfUser = Requests.sendGetRequestArray("users/4/contacts");
         for(int i = 0; i<listOfUser.length(); i++){
             JSONObject user = listOfUser.getJSONObject(i);
             String response = "id: " + user.get("id") + "\n"+
@@ -24,8 +23,8 @@ public class ContactTest {
                     "Email: " + user.get("email");
             System.out.println(response);
         }
-        Requests.sendDeleteRequest(Requests.PHONE_BOOK_BASE,"users/4/");
-        JSONArray listOfUserAfter = Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE,"users/4/contacts");
+        Requests.sendDeleteRequest("users/4/");
+        JSONArray listOfUserAfter = Requests.sendGetRequestArray("users/4/contacts");
         for(int i = 0; i<listOfUserAfter.length(); i++){
             JSONObject user = listOfUser.getJSONObject(i);
             String response = "id: " + user.get("id") + "\n"+
@@ -37,45 +36,52 @@ public class ContactTest {
         }
     }
 
-    @Test(description = "Проверка удаления контакта")
-    public void deleteContactAndCheck() throws IOException {
-        String firstName = "ContactFirstNameTest";
-        String lastName = "ContactLastNameTest";
-        String phone = "1232399734";
-        String email = "bo@bo.com";
-        int idOfUser = 1;
-        ContactMethod contactMethod = new ContactMethod();
-        int id = contactMethod.createContact(firstName,lastName,phone,email,idOfUser);
-        JSONArray listOfUser = Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE,"users/"+idOfUser+"/contacts");
-        ContactMethod.findContactAndCheckTrue(lastName,id,listOfUser);
-        Requests.sendDeleteRequest(Requests.PHONE_BOOK_BASE,"users/"+idOfUser+"/contacts/"+id+"/");
-        JSONArray listOfUserAfter =  Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE,"users/"+idOfUser+"/contacts");
-        ContactMethod.findContactAndCheckFalse(lastName,idOfUser,listOfUserAfter);
+    @DataProvider(name = "delete_check")
+    public Object[][] dataProviderDeleteAndCheck() {
+        return new Object[][] { { "ContactFirstNameTest","ContactLastNameTest","1232399734", "bo@bo.com"} };
     }
 
-    @Test
-    public void changeToBlankAndCheck() throws IOException {
-        String firstName = "TestFirstName";
-        String lastName = "TestLastName";
-        String phone = "3434343434";
-        String email = "Dora@explora";
-        String newLastName = "Vana";
-        String newNumber = "";
-        String newEmail = "";
+    @Test(description = "Проверка удаления контакта", dataProvider = "delete_check")
+    public void deleteContactAndCheck(String firstName, String lastName, String phone, String email) throws IOException {
+        LOGGER.info("deleteContactAndCheck: Start");
+        int idOfUser = 1;
+        HelperMethods help = new HelperMethods();
+        RequestMethods req = new RequestMethods();
+        int id = req.createContact(firstName,lastName,phone,email,idOfUser);
+        JSONArray listOfUser = Requests.sendGetRequestArray("users/"+idOfUser+"/contacts");
+        help.findAndCheckTrue(lastName,id,listOfUser);
+        Requests.sendDeleteRequest("users/"+idOfUser+"/contacts/"+id+"/");
+        JSONArray listOfUserAfter =  Requests.sendGetRequestArray("users/"+idOfUser+"/contacts");
+        help.findAndCheckFalse(lastName,idOfUser,listOfUserAfter);
+        LOGGER.info("deleteContactAndCheck: Finnish");
+    }
+
+    @DataProvider(name = "change_blank_check")
+    public Object[][] dataProviderBlankAndCheck() {
+        return new Object[][] { { "TestFirstName", "TestLastName","3434343434","Dora@explora.com",
+                "Vana","","gala@gmail.com"} };
+    }
+
+    @Test(description = "Проверка изменения номера на пустое значение",dataProvider = "change_blank_check")
+    public void changeToBlankAndCheck(String firstName,String lastName,String phone,String email,
+                                      String newLastName, String newNumber,String newEmail) throws IOException {
+        LOGGER.info("changeToBlankAndCheck: Start");
         int idOfUser = 2;
-        ContactMethod contactMethod = new ContactMethod();
-        int id = contactMethod.createContact(firstName,lastName,phone,email,idOfUser);
-        JSONArray listOfUser = Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE,"users/"+idOfUser+"/contacts");
-        ContactMethod.findContactAndCheckTrue(lastName,id,listOfUser);
+        HelperMethods help = new HelperMethods();
+        RequestMethods req = new RequestMethods();
+        int id = req.createContact(firstName,lastName,phone,email,idOfUser);
+        JSONArray listOfUser = Requests.sendGetRequestArray("users/"+idOfUser+"/contacts");
+        help.findAndCheckTrue(lastName,id,listOfUser);
         Contact contact = new Contact("Dodo",newLastName,newNumber,newEmail);
         try {
-            Requests.sendPutRequest(Requests.PHONE_BOOK_BASE, "users/" + idOfUser + "/contacts/" + id + "/",
+            Requests.sendPutRequest("users/" + idOfUser + "/contacts/" + id + "/",
                     Converter.toJSON(contact));
         } catch (IOException e){
            LOGGER.info("Error");
         }
-        JSONArray listOfUserAfter =  Requests.sendGetRequestArray(Requests.PHONE_BOOK_BASE,"users/"+idOfUser + "/contacts");
-        ContactMethod.findContactAndCheckFalse(newLastName,idOfUser,listOfUserAfter);
+        JSONArray listOfUserAfter =  Requests.sendGetRequestArray("users/"+idOfUser + "/contacts");
+        help.findAndCheckFalse(newLastName,idOfUser,listOfUserAfter);
+        LOGGER.info("changeToBlankAndCheck: Finnish");
 
     }
 }
