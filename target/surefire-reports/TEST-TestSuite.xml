@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="4.44" tests="4" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="2.058" tests="4" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="14"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="C:\Users\user\.jdks\openjdk-14.0.2\bin"/>
-    <property name="sun.java.command" value="C:\Users\user\AppData\Local\Temp\surefire6927515793973194458\surefirebooter13875686553001415949.jar C:\Users\user\AppData\Local\Temp\surefire6927515793973194458 2020-07-19T22-05-18_830-jvmRun1 surefire99792382286494221tmp surefire_03631281015279772236tmp"/>
+    <property name="sun.java.command" value="C:\Users\user\AppData\Local\Temp\surefire12006318930196704470\surefirebooter6988188842378169084.jar C:\Users\user\AppData\Local\Temp\surefire12006318930196704470 2020-07-20T12-46-45_598-jvmRun1 surefire6462637096490791562tmp surefire_015275490260534311112tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK\target\test-classes;C:\Users\user\IdeaProjects\DINS_QA_TEST_TASK\target\classes;C:\Users\user\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\user\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\user\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\user\.m2\repository\org\json\json\20180813\json-20180813.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-testng\2.13.5\allure-testng-2.13.5.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-java-commons\2.13.5\allure-java-commons-2.13.5.jar;C:\Users\user\.m2\repository\io\qameta\allure\allure-model\2.13.5\allure-model-2.13.5.jar;C:\Users\user\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\user\.m2\repository\org\apache\tika\tika-core\1.20\tika-core-1.20.jar;C:\Users\user\.m2\repository\org\jooq\joor-java-8\0.9.10\joor-java-8-0.9.10.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.9.3\jackson-databind-2.9.9.3.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\user\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.9\jackson-core-2.9.9.jar;"/>
     <property name="allure.results.directory" value="target/allure-results"/>
@@ -32,7 +32,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="idea.version2020.1.2" value="true"/>
-    <property name="surefire.real.class.path" value="C:\Users\user\AppData\Local\Temp\surefire6927515793973194458\surefirebooter13875686553001415949.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\user\AppData\Local\Temp\surefire12006318930196704470\surefirebooter6988188842378169084.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="14.0.2+12-46"/>
@@ -57,32 +57,32 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="58.0"/>
   </properties>
-  <testcase name="changeToBlankAndCheck" classname="test.ContactTest" time="1.266"/>
-  <testcase name="deleteContactAndCheck" classname="test.ContactTest" time="0.146">
+  <testcase name="changeToBlankAndCheck" classname="test.ContactTest" time="0.429"/>
+  <testcase name="deleteContactAndCheck" classname="test.ContactTest" time="0.126">
     <failure message="Ошибка отправки запроса: сервис вернул ошибку" type="java.io.IOException">java.io.IOException: Ошибка отправки запроса: сервис вернул ошибку
-	at test.ContactTest.deleteContactAndCheck(ContactTest.java:29)
+	at test.ContactTest.deleteContactAndCheck(ContactTest.java:28)
 </failure>
     <system-out><![CDATA[
 Sending POST request to URL : http://localhost:8080/users/1/contacts
 Response status: 201
-Результаты отправки запроса: {"id":38,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}
+Результаты отправки запроса: {"id":13,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}
 
 Sending GET request to URL : http://localhost:8080/users/1/contacts/search?number=1232399734
 Response status: 200
-Результаты отправки запроса: [{"id":6,"firstName":"ContactFirstNameTest","lastName":"ContactLastNameTest","phone":"1232399734","email":"bo@bo.com"},{"id":15,"firstName":"ContactFirstNameTest","lastName":"ContactLastNameTest","phone":"1232399734","email":"bo@bo.com"},{"id":17,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":25,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":28,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":30,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":32,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":34,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":36,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":38,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}]
+Результаты отправки запроса: [{"id":5,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":9,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":11,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"},{"id":13,"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}]
 
-Sending DELETE request to URL : http://localhost:8080/users/1/contacts/38/
+Sending DELETE request to URL : http://localhost:8080/users/1/contacts/13/
 Response status: 404
-Результаты отправки запроса: {"timestamp":"2020-07-19 10:05:25","status":404,"error":"Contact with id:38 not found"}
+Результаты отправки запроса: {"timestamp":"2020-07-20 12:46:48","status":404,"error":"Contact with id:13 not found"}
 ]]></system-out>
-    <system-err><![CDATA[июл. 19, 2020 10:05:24 PM test.ContactTest deleteContactAndCheck
+    <system-err><![CDATA[июл. 20, 2020 12:46:48 PM test.ContactTest deleteContactAndCheck
 INFO: deleteContactAndCheck: Start
-июл. 19, 2020 10:05:24 PM converter.Converter toJSON
+июл. 20, 2020 12:46:48 PM converter.Converter toJSON
 INFO: json created!
-июл. 19, 2020 10:05:24 PM converter.Converter toJSON
+июл. 20, 2020 12:46:48 PM converter.Converter toJSON
 INFO: {"firstName":"ContFirstName","lastName":"ContLastName","phone":"1232399734","email":"bo@bo.com"}
 ]]></system-err>
   </testcase>
-  <testcase name="createUserAndCheck" classname="test.UserTest" time="0.035"/>
-  <testcase name="updateUserAndCheck" classname="test.UserTest" time="0.778"/>
+  <testcase name="createUserAndCheck" classname="test.UserTest" time="0.078"/>
+  <testcase name="updateUserAndCheck" classname="test.UserTest" time="0.074"/>
 </testsuite>

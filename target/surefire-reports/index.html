@@ -116,7 +116,7 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="test.ContactTest" class="method navigator-link" hash-for-method="changeToBlankAndCheck(TestFirstName, TestLastName, 3434343434, Dora@explora.com, 3, Vana, , gala@gmail.com)">changeToBlankAndCheck(TestFirstName, TestLastName, 3434343434, Dora@explora.com, 3, Vana, , gala@gmail.com)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Surefire_suite" title="test.ContactTest" class="method navigator-link" hash-for-method="changeToBlankAndCheck(TestBFirstName, TestBLastName, 3434343434, Dora@explora.com, 2, Dodo, Vana, , gala@gmail.com)">changeToBlankAndCheck(TestBFirstName, TestBLastName, 3434343434, Dora@explora.com, 2, Dodo, Vana, , gala@gmail.com)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -154,9 +154,9 @@
                   <span class="method-name">deleteContactAndCheck</span>
                   <span class="parameters">(ContFirstName, ContLastName, 1232399734, bo@bo.com, 1)</span>
                   <div class="stack-trace">java.io.IOException: Ошибка отправки запроса: сервис вернул ошибку
-	at httpRequest.Requests.sendRequestWithoutBody(Requests.java:61)
-	at httpRequest.Requests.sendDeleteRequest(Requests.java:38)
-	at test.ContactTest.deleteContactAndCheck(ContactTest.java:29)
+	at httpRequest.Requests.sendRequestWithoutBody(Requests.java:63)
+	at httpRequest.Requests.sendDeleteRequest(Requests.java:39)
+	at test.ContactTest.deleteContactAndCheck(ContactTest.java:28)
 ... Removed 30 stack frames
 </div> <!-- stack-trace -->
                   <em>
@@ -165,24 +165,6 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Surefire_suite-class-failed -->
-          <div class="suite-Surefire_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">test.ContactTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="changeToBlankAndCheck(TestFirstName, TestLastName, 3434343434, Dora@explora.com, 3, Vana, , gala@gmail.com)">
-                  </a> <!-- changeToBlankAndCheck(TestFirstName, TestLastName, 3434343434, Dora@explora.com, 3, Vana, , gala@gmail.com) -->
-                  <span class="method-name">changeToBlankAndCheck</span>
-                  <span class="parameters">(TestFirstName, TestLastName, 3434343434, Dora@explora.com, 3, Vana, , gala@gmail.com)</span>
-                  <em>
-(Проверка изменения номера на пустое значение)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
           <div class="suite-Surefire_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -207,6 +189,24 @@
                   <span class="parameters">(TestUFirstName, TestULastName, NewUFirstName, NewULastName)</span>
                   <em>
 (Проверка на поиск пользователя с помощью старого имени)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">test.ContactTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="changeToBlankAndCheck(TestBFirstName, TestBLastName, 3434343434, Dora@explora.com, 2, Dodo, Vana, , gala@gmail.com)">
+                  </a> <!-- changeToBlankAndCheck(TestBFirstName, TestBLastName, 3434343434, Dora@explora.com, 2, Dodo, Vana, , gala@gmail.com) -->
+                  <span class="method-name">changeToBlankAndCheck</span>
+                  <span class="parameters">(TestBFirstName, TestBLastName, 3434343434, Dora@explora.com, 2, Dodo, Vana, , gala@gmail.com)</span>
+                  <em>
+(Проверка изменения номера на пустое значение)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -267,24 +267,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'changeToBlankAndCheck')
 data.setCell(0, 2, 'test.ContactTest')
-data.setCell(0, 3, 1249);
+data.setCell(0, 3, 407);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'updateUserAndCheck')
-data.setCell(1, 2, 'test.UserTest')
-data.setCell(1, 3, 759);
+data.setCell(1, 1, 'deleteContactAndCheck')
+data.setCell(1, 2, 'test.ContactTest')
+data.setCell(1, 3, 93);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'deleteContactAndCheck')
-data.setCell(2, 2, 'test.ContactTest')
-data.setCell(2, 3, 87);
+data.setCell(2, 1, 'createUserAndCheck')
+data.setCell(2, 2, 'test.UserTest')
+data.setCell(2, 3, 65);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'createUserAndCheck')
+data.setCell(3, 1, 'updateUserAndCheck')
 data.setCell(3, 2, 'test.UserTest')
-data.setCell(3, 3, 34);
+data.setCell(3, 3, 41);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 606 ms</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -312,25 +312,25 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">test.ContactTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">changeToBlankAndCheck(TestFirstName, TestLastName, 3434343434, Dora@explora.com, 3, Vana, , gala@gmail.com)</span>
+                <span class="method-name">changeToBlankAndCheck(TestBFirstName, TestBLastName, 3434343434, Dora@explora.com, 2, Dodo, Vana, , gala@gmail.com)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">deleteContactAndCheck(ContFirstName, ContLastName, 1232399734, bo@bo.com, 1)</span>
-                <span class="method-start">1395 ms</span>
+                <span class="method-start">492 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">test.UserTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">createUserAndCheck(TestCFirstName, TestCLastName)</span>
-                <span class="method-start">1547 ms</span>
+                <span class="method-start">612 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">updateUserAndCheck(TestUFirstName, TestULastName, NewUFirstName, NewULastName)</span>
-                <span class="method-start">1585 ms</span>
+                <span class="method-start">698 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
